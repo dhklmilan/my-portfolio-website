@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Milan Dhakal – Portfolio</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/web/micon.png" rel="icon">
+  <link href="assets/img/web/micon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+  <!-- Gallery CSS File -->
+  <link href="assets/css/gallery.css" rel="stylesheet">
+</head>
+
+<body class="gallery-page">
+
+  <header id="header" class="header dark-background d-flex flex-column">
+    <i class="header-toggle d-xl-none bi bi-list"></i>
+
+    <div class="profile-img">
+      <img src="assets/img/hero.jpg" alt="" class="img-fluid rounded-circle">
+    </div>
+
+    <a href="index.html" class="logo d-flex align-items-center justify-content-center">
+      <h1 class="sitename">Milan</h1>
+    </a>
+
+    <div class="social-links text-center">
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=dhklmilan@gmail.com" 
+          target="_blank" 
+          title="Email" 
+          class="email-link">
+          <i class="bi bi-envelope-fill"></i></a>
+        <a href="https://www.linkedin.com/in/milan-dhakal/" target="_blank" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+        <a href="https://github.com/dhklmilan" target="_blank" title="GitHub"><i class="bi bi-github"></i></a>
+    </div>
+
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li><a href="index.html"><i class="bi bi-house navicon"></i> Home</a></li>
+        <li><a href="resume.html"><i class="bi bi-file-earmark-text navicon"></i>Resume</a></li>
+        <li><a href="portfolio.html"class="active"><i class="bi bi-lightbulb navicon"></i> Portfolio</a></li>
+        <li><a href="research.html"><i class="bi bi-search navicon"></i> Research</a></li>
+        <li><a href="gallery.html" ><i class="bi bi-camera navicon"></i> Gallery</a></li>
+        <li><a href="contact.html"><i class="bi bi-envelope navicon"></i> Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title dark-background">
+      <div class="container d-lg-flex justify-content-between align-items-center">
+        <h1 class="mb-2 mb-lg-0">Portfolio Details</h1>
+        
+      </div>
+    </div><!-- End Page Title -->
+
+    <!-- Portfolio Details Section -->
+    <section id="portfolio-details" class="portfolio-details section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-8">
+            <div class="portfolio-details-slider swiper init-swiper">
+
+              <script type="application/json" class="swiper-config">
+                {
+                  "loop": true,
+                  "speed": 600,
+                  "autoplay": {
+                    "delay": 5000
+                  },
+                  "slidesPerView": "auto",
+                  "pagination": {
+                    "el": ".swiper-pagination",
+                    "type": "bullets",
+                    "clickable": true
+                  }
+                }
+              </script>
+
+              <div class="swiper-wrapper align-items-center">
+
+               <div class="swiper-slide">
+                  <img src="assets/img/web/chirps.png" alt="">
+                </div>
+                 
+                <div class="swiper-slide">
+                  <img src="assets/img/web/downscale.jpg" alt="">
+                </div>
+
+                <div class="swiper-slide">
+                  <img src="assets/img/web/precipitation.png" alt="">
+                </div>
+
+                <div class="swiper-slide">
+                  <img src="assets/img/web/precipitation2.png" alt="">
+                </div>
+
+         </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
+              <h3>Precipitation Downscaling using Machine Learning in Google Earth Engine</h3>
+              <p>This project downscaled coarse-resolution CHIRPS rainfall data to a finer spatial resolution (~1 km) using a Random Forest regression model. I combined topographic (DEM, slope, aspect), land cover, NDVI, and temperature data to estimate monthly precipitation from 2000 to 2012. The model showed high accuracy, with strong correlation between predicted and actual values (R² = 0.97). Validation charts revealed that most errors were concentrated in the peak monsoon months—an expected challenge due to extreme rainfall variability.
+                This analysis is a part of methodology of my <a href="metamodel.html">research work.</a>
+                This work supports more localized hydrological modeling, water resource planning, and climate studies in data-scarce mountain regions.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Portfolio Details Section -->
+
+  </main>
+
+     
+<!-- footer id changed with my custom design of CC-BY-NC-ND -->
+<footer id="footer" class="footer position-relative light-background">
+    <div class="container">
+        <div class="copyright text-center">
+            <p>©<strong class="px-1 sitename">2025 Milan Dhakal.</strong>
+               <br>
+               This work is licensed under 
+               <a href="https://creativecommons.org/licenses/by-nc-nd/4.0" rel="noopener noreferrer" target="_blank">CC BY-NC-ND 4.0</a>.
+               <br>
+               Code samples are open-source and available under the 
+               <a href="https://opensource.org/licenses/MIT" rel="noopener noreferrer" target="_blank">MIT License</a>.
+               <br>
+               <img height="24" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="Creative Commons">
+               <img height="24" src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="Attribution">
+               <img height="24" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" alt="Non-Commercial">
+               <img height="24" src="https://mirrors.creativecommons.org/presskit/icons/nd.svg" alt="No Derivatives">
+            </p>
+        </div>
+    </div>
+</footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
