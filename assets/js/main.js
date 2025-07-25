@@ -319,33 +319,54 @@ signal: controller.signal
 clearTimeout(timeoutId);
 
 
-
-  // code for making lazy loading (for fast website loading)
+// lazy loading
 document.addEventListener("DOMContentLoaded", function() {
-  const lazyImages = document.querySelectorAll('.lazy-img');
+  const lazyImages = [].slice.call(document.querySelectorAll("img.lazy-img"));
   
-  if ('IntersectionObserver' in window) {
-    const imageObserver = new IntersectionObserver((entries, observer) => {
+  // Check network connection
+  const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+  const isSlowConnection = connection ? 
+    (connection.effectiveType.includes('2g') || connection.saveData) : 
+    false;
+
+  if ("IntersectionObserver" in window) {
+    const lazyImageObserver = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          const img = entry.target;
-          img.src = img.dataset.src;
-          img.classList.add('loaded');
-          observer.unobserve(img);
+          const lazyImage = entry.target;
+          
+          // Network-aware loading strategy
+          if (isSlowConnection) {
+            // For slow connections, wait until image is fully in viewport
+            const rect = entry.boundingClientRect;
+            if (rect.top <= window.innerHeight && rect.bottom >= 0) {
+              loadImage(lazyImage);
+            }
+          } else {
+            // For fast connections, load immediately when partially in viewport
+            loadImage(lazyImage);
+          }
+          
+          observer.unobserve(lazyImage);
         }
       });
+    }, {
+      rootMargin: isSlowConnection ? "0px" : "200px" // Load earlier on fast connections
     });
 
-    lazyImages.forEach(img => {
-      imageObserver.observe(img);
+    lazyImages.forEach(lazyImage => {
+      lazyImageObserver.observe(lazyImage);
     });
   } else {
-    // Fallback for browsers without IntersectionObserver
-    lazyImages.forEach(img => {
+    // Fallback for older browsers
+    lazyImages.forEach(loadImage);
+  }
+
+  function loadImage(img) {
+    if (img.dataset.src) {
       img.src = img.dataset.src;
-      img.classList.add('loaded');
-    });
+      img.classList.add("loaded");
+      img.removeAttribute("data-src");
+    }
   }
 });
-
-
