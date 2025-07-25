@@ -1308,16 +1308,7 @@ section,
   background: var(--surface-color);
 }
 
-/* Lazy loading styles */
-.lazy-img {
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  background: #f0f0f0;
-}
 
-.lazy-img.loaded {
-  opacity: 1;
-}
 
 @media (max-width: 768px) {
   .gallery-grid {
