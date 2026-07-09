@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Milan Dhakal – Portfolio</title>
+  <title>Milan Dhakal – Website</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -49,6 +49,7 @@
           class="email-link">
           <i class="bi bi-envelope-fill"></i></a>
         <a href="https://www.linkedin.com/in/milan-dhakal/" target="_blank" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+        <a href="https://scholar.google.com/citations?user=YOUR_ID" target="_blank" title="Google Scholar"><i class="bi bi-google"></i></a>
         <a href="https://github.com/dhklmilan" target="_blank" title="GitHub"><i class="bi bi-github"></i></a>
     </div>
 
@@ -78,12 +79,9 @@
     <!-- Your Research Section -->
     <section id="research" class="container" data-aos="fade-up" data-aos-delay="200">
       <h4 class="research-title" style="font-size: 22px;">
-  A Meta-Modeling Approach for High-Resolution Forest Fire Risk Projection in Nepal under Past, Present, and Future Climate Scenarios
-</h4>
+  Nationwide Forest Fire Risk Projection in Nepal Using Earth Observation Data and Explainable Machine Learning </h4>
 
-      <p>
-        I am currently conducting an independent, nationwide research project that aims to predict forest fire risk using a robust meta-model framework built from an ensemble of ten base models:
-        </p>
+      <p>This started as a nationwide research project to predict forest fire risk using a meta-model framework built from an ensemble of ten base models: </p>
         <p><br><strong>1. Random Forest (RF)</strong>
         <br><strong>2. Boosted Regression Tree (BRT)</strong> 
         <br><strong>3. Decision Tree (DT)</strong>
@@ -95,23 +93,18 @@
         <br><strong>9. Adaptive Boosting (AdaBoost)</strong>
         <br><strong>10. multivariate adaptive regression splines (MARS)</strong>
         </p>
-        <p>
-        This research evaluates the spatial and temporal 
-        dynamics of forest fire risk under three distinct climate regimes: the past (2001–2012), present (2012–2025), and future (2025–2050).
-        To achieve this, I am integrating historical datasets with future climate projections based on Shared Socioeconomic Pathways (SSPs) 
-        and Representative Concentration Pathways (RCPs). Processing large-scale OpenStreetMap (OSM) data (>400 GB) for extracting detailed anthropogenic factors such as roads and settlements has been computationally intensive. To address these computational challenges, I am actively searching for high-performance computing resources, including supercomputers and alternative efficient processing methods. To ensure accurate and timely data extraction,
-        I have <a href="portfolio_prec.html" >downscaled CHIRPS precipitation data to a 1 km resolution</a> and plan to use Landsat 8/9 imagery for temperature and vegetation 
-        indices to enhance spatial accuracy.
-      </p>
-      <p>
-        This meta-model was initially developed and validated using detailed data from my previous <a href="https://doi.org/10.5194/egusphere-2025-2492">research work</a> in the Rasuwa District, 
-        which provides a solid methodological foundation. By combining ensemble learning techniques with high-resolution 
-        climate and land-use data, this research will produce nuanced insights into forest fire risk hotspots and trends across Nepal.
-      </p>
-      <p>
-        I hope the findings will help policymakers, forest managers, and local communities better understand evolving fire regimes 
-        and strengthen their preparedness and adaptive management strategies in the face of climate change.
-      </p>
+        <p>Also, the initial idea was to evaluate forest fire risk across three climate regimes:  past (2001–2012), present (2012–2025), and future (2025–2050),
+           by integrating historical data with climate projections based on SSPs and RCPs. That's still the direction, but I've since stepped back to test the 
+           methodology itself before committing to it. <br> Right now, I'm comparing three modeling approaches: a conjoined ensemble, a multi-model framework, 
+           and a single explainable model to determine which one actually fits this problem best, rather than defaulting to the most complex option. Once that
+           question is settled, I'll move forward with feeding the prepared data through the chosen framework. </p>      
+        <p>The methodological foundation for this comes from my earlier <a href="https://doi.org/10.5194/egusphere-2025-2492">research work</a> in Rasuwa District,
+           where the core approach was first developed and validated. Combining ensemble or explainable 
+           learning techniques with high-resolution climate and land-use data should eventually produce 
+           a clearer picture of forest fire risk hotspots and trends across Nepal. <br>
+           I hope the findings will help policymakers, forest managers, and local communities better understand evolving fire regimes 
+           and strengthen their preparedness and adaptive management strategies in the face of climate change.
+        </p>
     </section>
     <!-- End Research Section -->
 
