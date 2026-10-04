@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Fire Incidents and Burn Severity Map, 2024</title>
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="fstyle.css">
+</head>
+<body>
+
+
+  <header class="topbar">
+    <h1>Ecosystem Response to Burn Severity</h1>
+    <p class="sub">MODIS, VIIRS Fire incidents and burn severity, 2024</p>
+  </header>
+
+  <div id="map" aria-label="Fire map"></div>
+  <div id="status" class="status" role="status">Loading layers (wait for few sec)…</div>
+
+  <!-- Libraries -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/proj4@2.9.2/dist/proj4.js"></script>
+  <script src="https://unpkg.com/shpjs@4.0.4/dist/shp.min.js"></script>
+  <script src="https://unpkg.com/georaster@1.6.0/dist/georaster.browser.bundle.min.js"></script>
+  <script src="https://unpkg.com/georaster-layer-for-leaflet@3.10.0/dist/georaster-layer-for-leaflet.min.js"></script>
+
+  <!-- App -->
+  <script src="fconfig.js"></script>
+  <script src="fapp.js"></script>
+</body>
+</html>
