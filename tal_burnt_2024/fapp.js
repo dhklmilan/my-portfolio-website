@@ -47,6 +47,11 @@
   }).addTo(map);
   map.fitBounds(CONFIG.mainMap.bounds);
 
+
+// Canvas renderer with a larger tap area (works well with fingers on phones)
+const pointRenderer = L.canvas({ pane: "points", tolerance: 12 });
+
+
   // Loaders, to load different types of datasets 
   async function fetchBuf(url) {
     const r = await fetch(enc(url));
@@ -78,11 +83,15 @@
     const props = dbfBuf ? shp.parseDbf(dbfBuf) : [];
     const geojson = shp.combine([geoms, props]);
 
+
+
     return L.geoJSON(geojson, {
       pane: "points",
       pointToLayer: (f, latlng) => L.circleMarker(latlng, {
-        pane: "points", radius: 3, color: "#fff", weight: 1,
-        fillColor: cfg.color, fillOpacity: 0.9
+  renderer: pointRenderer,
+  pane: "points", radius: 6, color: "#fff", weight: 1,
+  fillColor: cfg.color, fillOpacity: 0.9
+//added point to layer block for better click and inforamtion on small device too
       }),
       style: () => ({ color: cfg.color, weight: 1.5, fillOpacity: 0.4 }),
       onEachFeature: (f, layer) => layer.bindPopup(popupHtml(f.properties))
@@ -186,6 +195,31 @@
     }
   });
   map.addControl(new Legend());
+
+// pop message about fire information //
+  // Show fire information message after 5 seconds
+/* ---------- Hint pop-up after 5 seconds ---------- */
+const hintEl = document.getElementById("hint");
+let hintTimer = null;
+
+function hideHint() {
+  hintEl.classList.add("hide");
+  clearTimeout(hintTimer);
+}
+
+document.getElementById("hint-close").addEventListener("click", hideHint);
+
+// Show after 5 s, hide automatically after 8 s more
+setTimeout(() => {
+  hintEl.classList.remove("hide");
+  hintTimer = setTimeout(hideHint, 8000);
+}, 5000);
+
+// If the user already clicked a fire point, there is no need to show the hint
+map.on("popupopen", hideHint);
+
+/// code closed
+
 
   // Initial layers
   const initial = CONFIG.layers.filter((l) => l.checked).map((l) => setVisible(l.id, true));

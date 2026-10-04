@@ -28,7 +28,7 @@ const CONFIG = { mainMap: {
       type: "raster",
       url: "data/MODIS_burnt area/MODIS_Burned_Area_TAL_2024.tif",
       checked: false,
-      color: "#f11004"
+      color: "#E63946"
     },
     {
       id: "viirs_fire",
@@ -36,8 +36,17 @@ const CONFIG = { mainMap: {
       type: "shapefile",
       url: "data/VIIRS_DATA/final_VIIRS_2024.shp",
       checked: false,
-      color: "#f09a1a"
-    }
+      color: "#00B4D8"
+    },
+     {
+    id: "Tal",
+    label: "terai_landscape",
+    type: "shapefile",
+    url: "data/tal_shape/talline.shp",
+    checked: true,
+    color: "#f09a1a"
+    
+}
   ],
 
   // Legend: severity name: color swatch PNG in data/legend/

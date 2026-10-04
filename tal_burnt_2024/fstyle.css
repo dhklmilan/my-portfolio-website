@@ -83,6 +83,46 @@ body {
 .leaflet-popup-content td { padding: 2px 8px 2px 0; vertical-align: top; }
 .leaflet-popup-content td:first-child { font-weight: 650; }
 
+
+/* popup message */
+/* Hint pop-up */
+.hint {
+  position: absolute;
+  left: 50%;
+  top: calc(80px + env(safe-area-inset-top, 0px));
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #fff;
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--ember);
+  border-radius: var(--radius);
+  box-shadow: 0 2px 10px rgba(0,0,0,.25);
+  padding: 10px 12px 10px 14px;
+  font-size: .92rem;
+  max-width: min(420px, 90vw);
+  z-index: 1200;
+  animation: hint-in .25s ease-out;
+}
+.hint.hide { display: none; }
+.hint button {
+  border: 0;
+  background: none;
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--ink);
+  padding: 2px 6px;
+}
+@keyframes hint-in {
+  from { opacity: 0; transform: translate(-50%, -8px); }
+  to   { opacity: 1; transform: translate(-50%, 0); }
+}
+/* code cloased of pop up message */
+
+
 /* Responsiveness */
 @media (max-width: 600px) {
   .panel { font-size: .85rem; max-width: 70vw; }
