@@ -225,7 +225,7 @@ map.on("popupopen", hideHint);
   // Sidebar toggle (three-arrow button)
   const appBody = document.getElementById("appBody");
   const sideBtn = document.getElementById("sidebarToggle");
-  const isPhone = () => window.matchMedia("(max-width: 600px)").matches;
+  const isPhone = () => window.matchMedia("(max-width: 800px)").matches;
 
   function setSidebar(open) {
     appBody.classList.toggle("closed", !open);
