@@ -211,7 +211,7 @@ body {
 }
 
 /* Responsiveness */
-@media (max-width: 600px) {
+@media (max-width: 860px) {
   .panel { font-size: .85rem; max-width: 70vw; }
   .panel .body { max-height: 32vh; }
 
