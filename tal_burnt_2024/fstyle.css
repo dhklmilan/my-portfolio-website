@@ -210,7 +210,7 @@ body {
   to   { opacity: 1; transform: translate(-50%, 0); }
 }
 
-/* Responsiveness */
+/* Responsivenssess */
 @media (max-width: 860px) {
   .panel { font-size: .85rem; max-width: 70vw; }
   .panel .body { max-height: 32vh; }
