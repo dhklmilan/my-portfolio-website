@@ -10,22 +10,67 @@
 </head>
 <body>
 
-
   <header class="topbar">
-     <h1>Ecosystem Response to Burn Severity</h1>
-    <h1>Terai Arc Landscape (TAL), Nepal</h1>
+    <button id="sidebarToggle" class="side-toggle" type="button"
+            aria-label="Show or hide burn severity information" aria-expanded="true">
+      <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+        <path d="M4 6l5 6-5 6M10 6l5 6-5 6M16 6l5 6-5 6" fill="none"
+              stroke="currentColor" stroke-width="2.2"
+              stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+    <div class="titles">
+      <h1>Ecosystem Response to Burn Severity</h1>
+      <h1>Terai Arc Landscape (TAL), Nepal</h1>
+    </div>
   </header>
 
-  <div id="map" aria-label="Fire map"></div>
-  <div id="status" class="status" role="status">Loading layers (wait for few sec)…</div>
+  <div class="app-body" id="appBody">
 
-  <!--  popup message not uploading-->
-    <div id="fireInfoMessage" class="fire-info-message">
-<div id="hint" class="hint hide" role="status">
-  <span>Click a fire point on the map to view detailed fire information.</span>
-  <button id="hint-close" type="button" aria-label="Close message">&times;</button>
-</div>
+    <!-- Information sidebar (left) -->
+    <aside class="sidebar" id="sidebar">
+      <section class="info-card">
+        <h2 class="info-title">Burn Severity Methodology</h2>
+        <p>
+          Burn severity was assessed using pre- and post-fire Normalized Burn Ratio (NBR)
+          derived from NIR and SWIR bands. The difference between pre- and post-fire NBR
+          (dNBR) was calculated and classified into burn-severity classes based on the
+          USGS burn severity classification.
+        </p>
+        <p>
+          Total burned area was calculated by summing the areas classified as High,
+          Moderate-high, Moderate-low, and Low Severity.
+        </p>
 
+        <div class="stat">
+          <span class="stat-label">Total Forest Area</span>
+          <span class="stat-value">1,157,289.62 ha</span>
+        </div>
+        <div class="stat burned">
+          <span class="stat-label">Total Burned Area</span>
+          <span class="stat-value">322,920.26 ha</span>
+          <span class="stat-note">27.90% of total forest area</span>
+        </div>
+      </section>
+
+      <section class="info-card">
+        <h2 class="info-title">Burned Area by Severity Class</h2>
+        <img class="info-chart" src="data/bar_chart.jpg" alt="Burned area by burn severity class">
+      </section>
+    </aside>
+
+    <!-- Map (fills the rest) -->
+    <main class="map-wrap">
+      <div id="map" aria-label="Fire map"></div>
+      <div id="status" class="status" role="status">Loading layers (wait for few sec)…</div>
+
+      <div id="hint" class="hint hide" role="status">
+        <span>Click a fire point on the map to view detailed fire information.</span>
+        <button id="hint-close" type="button" aria-label="Close message">&times;</button>
+      </div>
+    </main>
+
+  </div>
 
   <!-- Libraries -->
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>

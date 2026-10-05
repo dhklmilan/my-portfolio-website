@@ -5,13 +5,17 @@ const CONFIG = { mainMap: {
     attributions: ' ',
     projection: 'EPSG:4326',
     alwaysInRange: true,
-    opacity: 0.85},
+    opacity: 0.85,
+    },
 
 
   // Optional: initial view if bounds are not enough
- initialView: { center: [28.772, 82.784], zoom: 16 },
+ initialView: { center: [28.772, 82.784], 
+                 zoom: 25 },
 
 
+
+ 
   // Checklist layers (top right). "checked" = shown when page opens.
   layers: [
     {
@@ -19,7 +23,7 @@ const CONFIG = { mainMap: {
       label: "MODIS fire incident (2024)",
       type: "shapefile",
       url: "data/MODIS_fire/TAL_Fire_Confidence_GE70_2024.shp",
-      checked: true,
+      checked: false,
       color: "#d6402a"
     },
     {
@@ -40,7 +44,7 @@ const CONFIG = { mainMap: {
     },
      {
     id: "Tal",
-    label: "terai_landscape",
+    label: "Terai Arc Landscape",
     type: "shapefile",
     url: "data/tal_shape/talline.shp",
     checked: true,

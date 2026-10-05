@@ -45,7 +45,9 @@
     pane: "main", opacity: CONFIG.mainMap.opacity, interactive: false,
     alt: "dNBR burn severity map"
   }).addTo(map);
-  map.fitBounds(CONFIG.mainMap.bounds);
+  
+    map.fitBounds(CONFIG.mainMap.bounds);
+
 
 
 // Canvas renderer with a larger tap area (works well with fingers on phones)
@@ -102,7 +104,7 @@ const pointRenderer = L.canvas({ pane: "points", tolerance: 12 });
     const buf = await fetchBuf(cfg.url);
     const georaster = await parseGeoraster(buf);
     return new GeoRasterLayer({
-      georaster, pane: "burnt", opacity: 0.8, resolution: 256,
+      georaster, pane: "burnt", opacity: 0.8, resolution: 256, 
       // draw burned pixels only (MODIS burned area: 0 / nodata = not burned)
       pixelValuesToColorFn: (vals) => {
         const v = vals[0];
@@ -220,7 +222,21 @@ map.on("popupopen", hideHint);
 
 /// code closed
 
+  // Sidebar toggle (three-arrow button)
+  const appBody = document.getElementById("appBody");
+  const sideBtn = document.getElementById("sidebarToggle");
+  const isPhone = () => window.matchMedia("(max-width: 600px)").matches;
 
+  function setSidebar(open) {
+    appBody.classList.toggle("closed", !open);
+    sideBtn.setAttribute("aria-expanded", String(open));
+    // let the CSS transition finish, then re-measure the map
+    setTimeout(() => map.invalidateSize(), 300);
+  }
+
+  setSidebar(!isPhone());                       // open on large screens, closed on phones
+  sideBtn.addEventListener("click", () => setSidebar(appBody.classList.contains("closed")));
+  map.on("click", () => { if (isPhone()) setSidebar(false); });  // tap the map to close on phones
   // Initial layers
   const initial = CONFIG.layers.filter((l) => l.checked).map((l) => setVisible(l.id, true));
   Promise.allSettled(initial).then(clearStatus);
