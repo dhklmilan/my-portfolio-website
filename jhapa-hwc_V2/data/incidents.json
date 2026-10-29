@@ -1,0 +1,312 @@
+[
+ {
+  "incident_id": "HWC-001",
+  "affected_person": "Ram Bahadur Rai",
+  "municipality": "Kankai",
+  "ward": 3,
+  "species": "Asian Elephant",
+  "wildlife_group": "Elephant",
+  "damage_category": "Crop Damage",
+  "policy_number": "JH-HWC-2024-001",
+  "incident_date": "2024-09-14",
+  "crop": "Paddy",
+  "area_damaged_ha": 0.58,
+  "economic_loss_npr": 148000,
+  "mitigation_status": "Pending",
+  "photos": [
+   "photos/HWC-001/JHP-HWC-0001_01.jpeg"
+  ],
+  "description": "Herd of about 12 elephants trampled mature paddy overnight.",
+  "is_sample_data": true
+ },
+ {
+  "incident_id": "HWC-002",
+  "affected_person": "Sita Devi Subedi",
+  "municipality": "Mechinagar",
+  "ward": 7,
+  "species": "Asian Elephant",
+  "wildlife_group": "Elephant",
+  "damage_category": "Crop Damage",
+  "policy_number": "JH-HWC-2025-002",
+  "incident_date": "2025-10-02",
+  "crop": "Maize",
+  "area_damaged_ha": 0.38,
+  "economic_loss_npr": 96000,
+  "mitigation_status": "Compensation Paid",
+  "photos": [
+   "photos/HWC-002/JHP-HWC-0003_01.jpeg",
+   "photos/HWC-002/JHP-HWC-0004_01.jpeg"
+  ],
+  "description": "Night raid from the Mechi river-side forest edge.",
+  "is_sample_data": true
+ },
+ {
+  "incident_id": "HWC-003",
+  "affected_person": "Dil Maya Limbu",
+  "municipality": "Shivasatakshi",
+  "ward": 5,
+  "species": "Asian Elephant",
+  "wildlife_group": "Elephant",
+  "damage_category": "Property Damage",
+  "policy_number": "JH-HWC-2023-003",
+  "incident_date": "2023-11-21",
+  "crop": null,
+  "area_damaged_ha": 0,
+  "economic_loss_npr": 210000,
+  "mitigation_status": "Compensation Paid",
+  "photos": [
+   "photos/HWC-003/1.svg",
+   "photos/HWC-003/2.svg"
+  ],
+  "description": "Granary and boundary wall damaged by a single bull.",
+  "is_sample_data": true
+ },
+ {
+  "incident_id": "HWC-004",
+  "affected_person": "Hari Prasad Khanal",
+  "municipality": "Buddhashanti",
+  "ward": 2,
+  "species": "Asian Elephant",
+  "wildlife_group": "Elephant",
+  "damage_category": "Death",
+  "policy_number": "JH-HWC-2022-004",
+  "incident_date": "2022-08-30",
+  "crop": null,
+  "area_damaged_ha": 0,
+  "economic_loss_npr": 500000,
+  "mitigation_status": "Compensation Paid",
+  "photos": [
+   "photos/HWC-004/1.svg"
+  ],
+  "description": "Fatal encounter while returning home after dusk.",
+  "is_sample_data": true
+ },
+ {
+  "incident_id": "HWC-005",
+  "affected_person": "Kamala Tamang",
+  "municipality": "Gauradaha",
+  "ward": 9,
+  "species": "Leopard",
+  "wildlife_group": "Leopard",
+  "damage_category": "Livestock Depredation",
+  "policy_number": "JH-HWC-2025-005",
+  "incident_date": "2025-03-11",
+  "crop": null,
+  "area_damaged_ha": 0,
+  "economic_loss_npr": 38000,
+  "mitigation_status": "Under Review",
+  "photos": [
+   "photos/HWC-005/1.svg",
+   "photos/HWC-005/2.svg"
+  ],
+  "description": "Two goats taken from an open shed.",
+  "is_sample_data": true
+ },
+ {
+  "incident_id": "HWC-006",
+  "affected_person": "Bishnu Maya Gurung",
+  "municipality": "Arjundhara",
+  "ward": 4,
+  "species": "Leopard",
+  "wildlife_group": "Leopard",
+  "damage_category": "Human Injury",
+  "policy_number": "JH-HWC-2024-006",
+  "incident_date": "2024-02-06",
+  "crop": null,
+  "area_damaged_ha": 0,
+  "economic_loss_npr": 85000,
+  "mitigation_status": "Compensation Paid",
+  "photos": [
+   "photos/HWC-006/1.svg"
+  ],
+  "description": "Farmer injured while cutting fodder near a forest patch.",
+  "is_sample_data": true
+ },
+ {
+  "incident_id": "HWC-007",
+  "affected_person": "Prem Kumar Oli",
+  "municipality": "Damak",
+  "ward": 11,
+  "species": "Leopard",
+  "wildlife_group": "Leopard",
+  "damage_category": "Livestock Depredation",
+  "policy_number": "JH-HWC-2026-007",
+  "incident_date": "2026-01-19",
+  "crop": null,
+  "area_damaged_ha": 0,
+  "economic_loss_npr": 52000,
+  "mitigation_status": "Pending",
+  "photos": [
+   "photos/HWC-007/1.svg",
+   "photos/HWC-007/2.svg"
+  ],
+  "description": "A calf killed in a cattle shed at the settlement edge.",
+  "is_sample_data": true
+ },
+ {
+  "incident_id": "HWC-008",
+  "affected_person": "Gita Rajbanshi",
+  "municipality": "Birtamod",
+  "ward": 6,
+  "species": "Rhesus Monkey",
+  "wildlife_group": "Monkey",
+  "damage_category": "Crop Damage",
+  "policy_number": "JH-HWC-2025-008",
+  "incident_date": "2025-06-25",
+  "crop": "Vegetables",
+  "area_damaged_ha": 0.17,
+  "economic_loss_npr": 42000,
+  "mitigation_status": "Not Reported",
+  "photos": [
+   "photos/HWC-008/1.svg",
+   "photos/HWC-008/2.svg"
+  ],
+  "description": "Troop raided a vegetable plot over several mornings.",
+  "is_sample_data": true
+ },
+ {
+  "incident_id": "HWC-009",
+  "affected_person": "Mohan Chhetri",
+  "municipality": "Mechinagar",
+  "ward": 12,
+  "species": "Rhesus Monkey",
+  "wildlife_group": "Monkey",
+  "damage_category": "Crop Damage",
+  "policy_number": "JH-HWC-2026-009",
+  "incident_date": "2026-04-08",
+  "crop": "Banana",
+  "area_damaged_ha": 0.28,
+  "economic_loss_npr": 67000,
+  "mitigation_status": "Under Review",
+  "photos": [
+   "photos/HWC-009/1.svg",
+   "photos/HWC-009/2.svg"
+  ],
+  "description": "Banana grove stripped by a large troop.",
+  "is_sample_data": true
+ },
+ {
+  "incident_id": "HWC-010",
+  "affected_person": "Laxmi Adhikari",
+  "municipality": "Shivasatakshi",
+  "ward": 8,
+  "species": "Rhesus Monkey",
+  "wildlife_group": "Monkey",
+  "damage_category": "Property Damage",
+  "policy_number": "JH-HWC-2024-010",
+  "incident_date": "2024-12-03",
+  "crop": null,
+  "area_damaged_ha": 0,
+  "economic_loss_npr": 18000,
+  "mitigation_status": "Not Reported",
+  "photos": [
+   "photos/HWC-010/1.svg"
+  ],
+  "description": "Roof sheets and water tank damaged.",
+  "is_sample_data": true
+ },
+ {
+  "incident_id": "HWC-011",
+  "affected_person": "Dhan Bahadur Magar",
+  "municipality": "Kankai",
+  "ward": 1,
+  "species": "Wild Boar",
+  "wildlife_group": "Other",
+  "damage_category": "Crop Damage",
+  "policy_number": "JH-HWC-2023-011",
+  "incident_date": "2023-07-17",
+  "crop": "Paddy",
+  "area_damaged_ha": 0.33,
+  "economic_loss_npr": 74000,
+  "mitigation_status": "Pending",
+  "photos": [
+   "photos/HWC-011/1.svg",
+   "photos/HWC-011/2.svg"
+  ],
+  "description": "Seedbeds rooted up repeatedly.",
+  "is_sample_data": true
+ },
+ {
+  "incident_id": "HWC-012",
+  "affected_person": "Sunita Karki",
+  "municipality": "Gauradaha",
+  "ward": 3,
+  "species": "Asian Elephant",
+  "wildlife_group": "Elephant",
+  "damage_category": "Crop Damage",
+  "policy_number": "JH-HWC-2026-012",
+  "incident_date": "2026-02-13",
+  "crop": "Sugarcane",
+  "area_damaged_ha": 0.85,
+  "economic_loss_npr": 226000,
+  "mitigation_status": "Under Review",
+  "photos": [
+   "photos/HWC-012/1.svg",
+   "photos/HWC-012/2.svg",
+   "photos/HWC-012/3.svg"
+  ],
+  "description": "Cane field flattened; electric fence was out of order.",
+  "is_sample_data": true
+ },
+ {
+  "incident_id": "HWC-013",
+  "affected_person": "Tek Bahadur Thapa",
+  "municipality": "Buddhashanti",
+  "ward": 7,
+  "species": "Asian Elephant",
+  "wildlife_group": "Elephant",
+  "damage_category": "Human Injury",
+  "policy_number": "JH-HWC-2025-013",
+  "incident_date": "2025-09-05",
+  "crop": null,
+  "area_damaged_ha": 0,
+  "economic_loss_npr": 120000,
+  "mitigation_status": "Compensation Paid",
+  "photos": [
+   "photos/HWC-013/1.svg"
+  ],
+  "description": "Injured while guarding a field at night.",
+  "is_sample_data": true
+ },
+ {
+  "incident_id": "HWC-014",
+  "affected_person": "Rita Bhujel",
+  "municipality": "Birtamod",
+  "ward": 2,
+  "species": "Leopard",
+  "wildlife_group": "Leopard",
+  "damage_category": "Livestock Depredation",
+  "policy_number": "JH-HWC-2024-014",
+  "incident_date": "2024-05-28",
+  "crop": null,
+  "area_damaged_ha": 0,
+  "economic_loss_npr": 29000,
+  "mitigation_status": "Compensation Paid",
+  "photos": [
+   "photos/HWC-014/1.svg"
+  ],
+  "description": "Dog and two hens killed near the home.",
+  "is_sample_data": true
+ },
+ {
+  "incident_id": "HWC-015",
+  "affected_person": "Narayan Dahal",
+  "municipality": "Damak",
+  "ward": 5,
+  "species": "Asian Elephant",
+  "wildlife_group": "Elephant",
+  "damage_category": "Crop Damage",
+  "policy_number": "JH-HWC-2023-015",
+  "incident_date": "2023-10-09",
+  "crop": "Maize",
+  "area_damaged_ha": 0.49,
+  "economic_loss_npr": 118000,
+  "mitigation_status": "Compensation Paid",
+  "photos": [
+   "photos/HWC-015/1.svg",
+   "photos/HWC-015/2.svg"
+  ],
+  "description": "Elephants crossed the canal into maize fields.",
+  "is_sample_data": true
+ }
+]

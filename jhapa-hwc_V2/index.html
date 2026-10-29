@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jhapa Human–Wildlife Conflict | Mapping &amp; Monitoring</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="dashboard">
+    <aside id="sidebar">
+      <header class="sidebar-header">
+        <div class="brand">
+          <span class="brand-mark">H</span>
+          <div class="brand-text">
+            <h1>Jhapa Human–Wildlife Conflict</h1>
+            <p>Mapping &amp; Monitoring · Prototype (sample data)</p>
+          </div>
+        </div>
+      </header>
+
+      <div class="sidebar-scroll">
+        <div class="filter-bar" id="group-bar">
+          <button class="filter-btn active" data-group="All">All</button>
+          <button class="filter-btn" data-group="Elephant">Elephants</button>
+          <button class="filter-btn" data-group="Leopard">Leopards</button>
+          <button class="filter-btn" data-group="Monkey">Monkeys</button>
+        </div>
+        <div class="filter-bar filter-bar-secondary" id="category-bar">
+          <button class="filter-chip active" data-cat="All">All Types</button>
+          <button class="filter-chip" data-cat="Death">Death</button>
+          <button class="filter-chip" data-cat="Human Injury">Human Injury</button>
+          <button class="filter-chip" data-cat="Crop Damage">Crop Damage</button>
+          <button class="filter-chip" data-cat="Property Damage">Property Damage</button>
+          <button class="filter-chip" data-cat="Livestock Depredation">Livestock</button>
+        </div>
+        <div class="select-grid">
+          <label>Municipality<select id="f-muni"></select></label>
+          <label>Ward<select id="f-ward"></select></label>
+          <label>Year<select id="f-year"></select></label>
+          <label>Mitigation<select id="f-status"></select></label>
+        </div>
+
+        <div class="stats-grid" id="stats"></div>
+        <div class="chart-card"><h3>Incidents by wildlife species</h3><div class="chart-box"><canvas id="chart-species"></canvas></div></div>
+        <div class="chart-card"><h3>Annual incident trend</h3><div class="chart-box"><canvas id="chart-year"></canvas></div></div>
+
+        <div class="listings-meta"><span id="listings-count"></span></div>
+        <div id="listings-container"></div>
+      </div>
+    </aside>
+
+    <main id="map-wrapper"><div id="map"></div></main>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script src="js/lib/shp.min.js"></script> <!-- shapefile reader (shpjs 4.0.4), bundled locally -->
+  <script src="js/script.js"></script>
+</body>
+</html>
