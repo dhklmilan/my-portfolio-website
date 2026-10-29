@@ -6,10 +6,11 @@
  * Works on static hosting (GitHub Pages). Needs http(s), not file://. */
 (function () {
   "use strict";
-  var CAT_COLORS = { "Death": "#991B1B", "Human Injury": "#F4735B", "Crop Damage": "#10B981",
+
+  var CAT_COLORS = { "Death": "#991B1B", "Human Injury": "#F4735B", "Crop Damage": "#0ba81e", 
                      "Property Damage": "#3B82F6", "Livestock Depredation": "#A855F7" };
   var CAT_ICONS = { "Death": "☠️", "Human Injury": "🩹", "Crop Damage": "🌾", "Property Damage": "🏚️", "Livestock Depredation": "🐐" };
-  var POLY_STYLE = { color: "#D97706", weight: 2, fillColor: "#F59E0B", fillOpacity: 0.4 };
+  var POLY_STYLE = { color: "#D97706", weight: 2, fillColor: "#A3B84C", fillOpacity: 0.4 };
   var PLACEHOLDER = "data:image/svg+xml;utf8," + encodeURIComponent(
     '<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200"><rect width="100%" height="100%" fill="#E2E8F0"/>' +
     '<text x="50%" y="50%" font-family="Arial" font-size="15" fill="#64748B" text-anchor="middle">No Image</text></svg>');
@@ -29,11 +30,18 @@
       });
   }); 
   function initMap() {
-    map = L.map("map").setView([26.62, 87.9], 10);
-    var light = L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
-      { attribution: '&copy; OpenStreetMap contributors &copy; CARTO', subdomains: "abcd", maxZoom: 20 });
+    map = L.map("map").setView([26.660922, 88.113331], 8);
+
+    var light= L.tileLayer('https://{s}.google.com/vt/lyrs=y&x={x}&y={y}&z={z}', {
+    subdomains: ['mt0', 'mt1', 'mt2', 'mt3'],
+    maxZoom: 20,
+    attribution: '© Google'
+  })
+    
     var osm = L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
       { attribution: '&copy; OpenStreetMap contributors', subdomains: "abc", maxZoom: 19 });
+   
+
     var sat = L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
       { attribution: "Tiles &copy; Esri", maxZoom: 19 }).addTo(map);
 
@@ -123,8 +131,8 @@ document.head.appendChild(municipalityStyle);
     console.error("Boundary shapefile not loaded:", e);
   });
     L.control.layers(
-      { "Streets (Light)": light, "Streets (OSM)": osm, "Satellite": sat },
-      { "Jhapa municipal boundary": boundaryLayer },
+      { "Streets (OSM)": osm, "Satellite": sat, "Satellite (detailed)": light, },
+      { "Mechinagar Municipal Boundary": boundaryLayer },
       { position: "topright" }
     ).addTo(map);
 
@@ -141,7 +149,10 @@ document.head.appendChild(municipalityStyle);
           Object.keys(CAT_COLORS).map(function (k) {
             return '<div><span class="sw" style="background:' + CAT_COLORS[k] + '"></span>' + k + "</div>";
           }).join("") +
-          '<div><span class="sq"></span>Crop-damage area</div>' +
+          '<div><span class="sq" style="' +
+'background:' + POLY_STYLE.color + ';' +
+'border:2px solid ' + POLY_STYLE.fillColor + ';' +
+'"></span>Crop-damage area</div>' +
         "</div>";
 
       var btn = d.querySelector(".legend-toggle");
@@ -249,7 +260,7 @@ document.head.appendChild(municipalityStyle);
       autoPanPaddingBottomRight: L.point(12, 16)
     };
   }
-
+    var LBL = "font-style:normal;font-weight:600;color:var(--navy);flex:0 0 64px;";   // label column
   function popupHtml(r) {
     var col = CAT_COLORS[r.damage_category] || "#64748B";
     var thumbs = (r.photos || []).length > 1 ? '<div class="gallery-strip">' + r.photos.map(function (p, i) {
@@ -262,13 +273,14 @@ document.head.appendChild(municipalityStyle);
       '<div class="card-body pc-info">' +
         '<div class="popup-head"><span class="card-id">' + esc(r.incident_id) + "</span>" + badge(r) + "</div>" +
         '<div class="card-title">' + esc(r.species) + "</div>" +
-        '<div class="info-rows">' +
-          '<div><i>📅</i><span>' + fmtDate(r.incident_date) + "</span></div>" +
-          '<div><i>📍</i><span>' + esc(r.municipality) + ", Ward " + esc(r.ward) + "</span></div>" +
-          '<div class="pc-extra"><i>👤</i><span>' + esc(r.affected_person) + "</span></div>" +
-          (r.crop ? '<div class="pc-extra"><i>🌱</i><span>' + esc(r.crop) + "</span></div>" : "") +
-          '<div class="pc-extra"><i>🛡️</i><span>' + esc(r.mitigation_status) + "</span></div>" +
-        "</div>" +
+       
+                '<div class="info-rows">' +
+          '<div><em style="' + LBL + '">Date</em><span>' + fmtDate(r.incident_date) + "</span></div>" +
+          '<div><em style="' + LBL + '">Location</em><span>' + esc(r.municipality) + ", Ward " + esc(r.ward) + "</span></div>" +
+          '<div class="pc-extra"><em style="' + LBL + '">Affected</em><span>' + esc(r.affected_person) + "</span></div>" +
+          (r.crop ? '<div class="pc-extra"><em style="' + LBL + '">Crop</em><span>' + esc(r.crop) + "</span></div>" : "") +
+          '<div class="pc-extra"><em style="' + LBL + '">Mitigation</em><span>' + esc(r.mitigation_status) + "</span></div>" +
+        "</div>"  +
         '<div class="pc-tiles">' + tiles + "</div>" +
         '<button type="button" class="pc-more">More details ▾</button>' +
       "</div>" +
@@ -315,12 +327,15 @@ if (r.damage_category === "Crop Damage") {
     icon: L.divIcon({
       className: "",
       iconSize: [18, 18], iconAnchor: [9, 9], popupAnchor: [0, -9],
-      html: '<div style="box-sizing:border-box;width:18px;height:18px;background:' + col +
-            ';border:3px solid #fff;border-radius:2px;box-shadow:0 0 0 1px rgba(15,23,42,.35)"></div>'
+      html: '<div style="box-sizing:border-box;width:16px;height:16px;' +
+      'background:transparent;' +
+      'border:2px solid ' + col + ';' +
+      'border-radius:2px;' +
+      'box-shadow:0 0 0 1px rgba(15,23,42,.25);"></div>'
     })
-  });
+  });          
 } else {
-  m = L.circleMarker([r.lat, r.lng], { radius: 9, color: "#fff", weight: 3, fillColor: col, fillOpacity: 1 });
+  m = L.circleMarker([r.lat, r.lng], { radius: 6, color: "#fff", weight: 3, fillColor: col, fillOpacity: 1 });
 }
       m.bindPopup(popupHtml(r), { maxWidth: 280 }).on("popupopen", bindGallery);
       pointLayer.addLayer(m); markerById[r.incident_id] = m;
@@ -331,7 +346,7 @@ if (r.damage_category === "Crop Damage") {
       }
     });
     renderList(list); renderStats(list); renderCharts(list);
-    if (fit && list.length) map.fitBounds(pointLayer.getBounds().pad(0.2), { maxZoom: 13 });
+    if (fit && list.length) map.fitBounds(pointLayer.getBounds().pad(0.2), { maxZoom: 18 });
   }
 
   function renderList(list) {
