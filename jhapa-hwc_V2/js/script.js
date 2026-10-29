@@ -1,9 +1,4 @@
-/* script.js — Jhapa Human–Wildlife Conflict Web GIS
- * Joins three datasets on `incident_id`:
- *   data/incidents.json          attribute records (+ photo paths)
- *   data/conflict_points.geojson point geometry
- *   data/crop_damage.geojson     polygon geometry (optional per incident)
- * Works on static hosting (GitHub Pages). Needs http(s), not file://. */
+
 (function () {
   "use strict";
 
