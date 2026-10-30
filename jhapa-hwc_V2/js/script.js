@@ -280,9 +280,10 @@ document.head.appendChild(municipalityStyle);
         '<button type="button" class="pc-more">More details ▾</button>' +
       "</div>" +
       '<div class="pc-foot">' + (r.description ? "<p>" + esc(r.description) + "</p>" : "") +
-        "<small>Policy no. " + esc(r.policy_number) + (r.is_sample_data ? " · Fictional sample record" : "") + "</small></div>" +
-    "</div>";
+        "<small>Policy no. " + esc(r.policy_number) + (r.is_sample_data ? "" : "") + "</small></div>" +
+    "</div>";    
   }
+//Fictional sample record put inside ""
 
    function bindGallery(e) {
     var el = e.popup.getElement(), main = el.querySelector(".gallery-main");
